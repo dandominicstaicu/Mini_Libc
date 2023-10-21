@@ -104,22 +104,6 @@ int strncmp(const char *str1, const char *str2, size_t len)
 	}
 	return 0;
 }
-// int strncmp(const char *str1, const char *str2, size_t len)
-// {
-// 	// while neither string reached the end of it and length not reached
-// 	while (*str1 != '\0' && *str2 != '\0' && len-- > 0) {
-// 		// if current characters don't match
-// 		if (*str1 != *str2)
-// 			break;
-// 			// return *str1 - *str2;
-
-// 		str1++;
-// 		str2++;
-// 	}
-
-
-// 	return *(const unsigned char *)str1 - *(const unsigned char *)str2;
-// }
 
 size_t strlen(const char *str)
 {
