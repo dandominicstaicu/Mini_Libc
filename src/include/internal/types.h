@@ -23,6 +23,8 @@ typedef unsigned long uint64_t;
 typedef int int32_t;
 typedef long int64_t;
 
+typedef long time_t; // defined time_t for sleep
+
 #define NULL	((void *) 0)
 
 #endif
