@@ -6,6 +6,16 @@
 
 int fstat(int fd, struct stat *st)
 {
-	/* TODO: Implement fstat(). */
-	return -1;
+	if (fd < 0 || !st) {
+		errno = EBADF;
+		return -1;
+	}
+
+	int result = syscall(__NR_fstat, fd, st);
+
+	if (result < 0) {
+		errno = -result;
+	}
+
+	return result;
 }
