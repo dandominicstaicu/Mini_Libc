@@ -11,9 +11,10 @@ int open(const char *filename, int flags, ...)
 	va_list args;
 	mode_t mode = 0;
 
+	/* if O_CREAT is set, mode specifies permissions */
 	if (flags & O_CREAT) {
 		va_start(args, flags);
-		mode = va_arg(args, mode_t);
+		mode = va_arg(args, mode_t); /* get the permissions */
 		va_end(args);
 	}
 

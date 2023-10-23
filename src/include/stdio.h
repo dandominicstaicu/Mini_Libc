@@ -10,6 +10,7 @@ extern "C" {
 #define EOF (-1)
 #define STDOUT_FILENO 1
 
+/* puts header defined here */
 int puts(const char *str);
 
 #ifdef __cplusplus

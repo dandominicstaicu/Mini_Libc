@@ -8,6 +8,10 @@ extern "C" {
 #include <stddef.h>
 #include <internal/types.h>
 
+#define __MAX_NSEC 999999999
+#define __MIN_NSEC 0
+
+/* used to represent time intervals in UNIX-like operating systems */
 struct timespec {
     time_t tv_sec; //seconds
     long tv_nsec; //nanoseconds

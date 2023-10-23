@@ -6,8 +6,9 @@
 
 int fstat(int fd, struct stat *st)
 {
+	/* validate the file desciptor and ensure stat struct pointer exists */
 	if (fd < 0 || !st) {
-		errno = EBADF;
+		errno = EBADF; /* bad file descriptor */
 		return -1;
 	}
 
@@ -15,6 +16,7 @@ int fstat(int fd, struct stat *st)
 
 	if (result < 0) {
 		errno = -result;
+		return -1;
 	}
 
 	return result;

@@ -37,5 +37,5 @@ int munmap(void *addr, size_t length)
 		return -1;
 	}
 
-	return 0; //success
+	return 0; /* success */
 }
