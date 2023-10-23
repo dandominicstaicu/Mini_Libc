@@ -162,7 +162,7 @@ char *strstr(const char *haystack, const char *needle)
 	// if the needle is empty, return haystack
 	if (!*needle)
 		return (char *)haystack;
-	
+
 	const char *p1;
 	const char *p2;
 	const char *start = haystack;
@@ -176,7 +176,7 @@ char *strstr(const char *haystack, const char *needle)
 			p1++;
 			p2++;
 		}
-		
+
 		// if reached the end of the needle, than the entire needle was found
 		if (!*p2)
 			return (char *)start;

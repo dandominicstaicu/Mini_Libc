@@ -24,7 +24,7 @@ void *mremap(void *old_address, size_t old_size, size_t new_size, int flags)
 		errno = -((long)res);
 		return MAP_FAILED;
 	}
-	
+
 	return res;
 }
 

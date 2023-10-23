@@ -18,7 +18,7 @@ int open(const char *filename, int flags, ...)
 	}
 
 	int ret = (int)syscall(__NR_open, filename, flags, mode);
-	
+
 	if (ret < 0) {
         errno = -ret;
         return -1;

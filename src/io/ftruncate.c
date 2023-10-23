@@ -18,7 +18,7 @@ int ftruncate(int fd, off_t length)
 		errno = EBADF;
 		return -1;
 	}
-	
+
 	struct stat st;
 	if (fstat(fd, &st) < 0) {
 		errno = EINVAL;
