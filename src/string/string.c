@@ -232,15 +232,18 @@ void *memmove(void *destination, const void *source, size_t num)
 	char *dest = (char *)destination;
 	const char *src = (const char *)source;
 
-	// create a temporary buffer (potentially overlapping regions)
-	char tmp[num];
-	for (size_t i = 0; i < num; i++) {
-		tmp[i] = src[i];
-	}
-
-	// copy from tmp buffer to the dest
-	for (size_t i = 0; i < num; ++i) {
-		dest[i] = tmp[i];
+	if (dest < src || dest >= (src + num)) {
+		// no overlap or dest is completly after src
+		while (num--) {
+			*dest++ = *src++;
+		}
+	} else {
+		// overlap (dest is after src, but not completly after)
+		dest += num;
+		src += num;
+		while (num--) {
+			*(--dest) = *(--src);
+		}
 	}
 
 	return destination;
